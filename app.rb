@@ -1,4 +1,4 @@
-require 'options'
+require './utils/options'
 
 class App
   def initialize
@@ -10,6 +10,8 @@ class App
     loop do
       @options.show_menu
       option = gets.chomp
+      exit if option == '10'
+
       @options.menu_options option
     end
     puts 'Bye'
