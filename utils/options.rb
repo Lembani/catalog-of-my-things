@@ -24,8 +24,6 @@ class Options
       # list albums
     when '3'
       # list genres
-    when '10'
-      exit
     end
   end
 end
