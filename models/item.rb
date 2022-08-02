@@ -7,6 +7,22 @@ class Item
     @publish_date = publish_date
   end
 
+  def add_genre(genre)
+    @genre = genre
+  end
+
+  def add_author(author)
+    @author = author
+  end
+
+  def add_source(source)
+    @source = source
+  end
+
+  def add_label(label)
+    @label = label
+  end
+
   def can_be_archived?
     @publish_date > 10
   end
