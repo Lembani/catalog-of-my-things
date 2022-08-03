@@ -1,4 +1,4 @@
-class label
+class Label
   attr_accessor :item
 
   def initialize(title, color)
