@@ -1,6 +1,6 @@
 require './item'
 
-class Genre
+class Genre < Item
   attr_reader :id
   attr_accessor :name, :items
 
