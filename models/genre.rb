@@ -5,6 +5,7 @@ class Genre < Item
   attr_accessor :name, :items
 
   def initialize(name)
+    super
     @id = Random.rand(1...1000)
     @name = name
     @items = []
