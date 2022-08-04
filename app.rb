@@ -6,13 +6,17 @@ class App
   end
 
   def run
-    puts 'Welcome to app'
+    puts ''
+    puts '     Welcome to      '
+    puts '  Catalog Of Things  '
+    puts ''
+
     loop do
       @options.show_menu
+      print 'Option: '
       option = gets.chomp
-      exit if option == '10'
-
-      @options.menu_options option
+      exit if option == '11'
+      @options.menu_options(option)
     end
     puts 'Bye'
   end
