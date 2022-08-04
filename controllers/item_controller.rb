@@ -1,4 +1,24 @@
 module ItemController
+  def load_all_items
+    items_store = []
+    items_file = open('./data/items.json')
+    if File.exist?(items_file) && File.read(items_file) != ''
+      items_data = items_file.read
+      JSON.parse(items_data).each do |item|
+        case item['className']
+        when 'Book'
+          # Store Book in Store
+        when 'MusicAlbum'
+          items_store << MusicAlbum.new(item['name'], item['publish_date'], item['on_spotify'])
+        when 'Game'
+          # Store Game in Store
+        end
+      end
+    else
+      File.write(items_file, '[]')
+    end
+    items_store
+  end
 
   def save_items
     items_store = []
