@@ -20,8 +20,10 @@ class Options
     case option
     when '1'
       # method to list books
+      list_book
     when '2'
       # list albums
+      list_label
     when '3'
       # list genres
     end
