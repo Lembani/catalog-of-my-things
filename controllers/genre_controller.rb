@@ -25,4 +25,13 @@ module GenreController
     puts 'No Genres to show' if @genres.empty?
   end
 
+  def create_genre
+    print 'Enter genre name: '
+    name = gets.chomp.strip
+    @genres << Genre.new(name)
+    puts ''
+    puts 'Genre added successfully!'
+    puts ''
+  end
+
 end
