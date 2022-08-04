@@ -19,4 +19,8 @@ describe Book do
     expect(@book.publisher).to eq('Youtube')
     expect(@book.cover_state).to eq('bad')
   end
+
+  it 'Should have a method can_be_archived return true' do
+    expect(@book.can_be_archived?).to eq(true)
+  end
 end
