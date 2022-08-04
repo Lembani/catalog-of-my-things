@@ -1,5 +1,16 @@
 module ItemController
 
+  def save_items
+    items_store = []
+    @items.each do |item|
+      case item
+      when MusicAlbum
+        items_store << { name: item.name, publish_date: item.publish_date,
+                         on_spotify: item.on_spotify, className: 'MusicAlbum' }
+      end
+    end
+    File.write('./data/items.json', items_store.to_json)
+  end
 
   def all_music_albums
     puts ''
