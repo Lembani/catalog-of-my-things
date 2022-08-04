@@ -22,3 +22,9 @@ CREATE TABLE music_album (
   genre_id INT,
   CONSTRAINT fk_genre FOREIGN KEY(genre_id) REFERENCES genre(id),
 );
+
+CREATE TABLE genre (
+  id SERIAL PRIMARY KEY,
+  name TEXT,
+  items TEXT [],
+);
