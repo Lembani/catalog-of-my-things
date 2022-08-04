@@ -34,4 +34,11 @@ module GenreController
     puts ''
   end
 
+  def save_genre
+    genre_store = []
+    @genres.each do |genre|
+      genre_store << { name: genre.name }
+    end
+    File.write('./data/genres.json', genre_store.to_json)
+  end
 end
