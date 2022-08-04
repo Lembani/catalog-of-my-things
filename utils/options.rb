@@ -2,15 +2,21 @@
 
 require_relative '../controllers/item_controller'
 require_relative '../controllers/genre_controller'
+require_relative '../controllers/book_controller'
+require_relative '../controllers/label_controller'
 
 class Options
   include ItemController
   include GenreController
+  include BookController
+  include LabelController
 
   def initialize
     @items = []
     @albums = []
     @genres = []
+    @books = []
+    @labels = []
   end
 
   def show_menu
@@ -36,6 +42,7 @@ class Options
       # method to list books
       list_book
     when '2'
+      list_label
       # list labels
     when '3'
       all_music_albums
@@ -47,6 +54,7 @@ class Options
       # list authors
     when '7'
       # add book
+      add_book
     when '8'
       # add game
     when '9'
