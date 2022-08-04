@@ -6,6 +6,10 @@ describe MusicAlbum do
     @music_album = MusicAlbum.new('Speak Now', '2010-10-25', false)
   end
 
+  it 'Should be an instance of the Class' do
+    expect(@music_album).to be_an_instance_of MusicAlbum
+  end
+
   it 'should return a correct album name' do
     expect(@music_album.name).to eq('Speak Now')
   end
