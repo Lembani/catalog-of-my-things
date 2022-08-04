@@ -1,22 +1,23 @@
 # rubocop:disable Metrics/CyclomaticComplexity
 
+require 'json'
 require_relative '../controllers/item_controller'
+require_relative '../controllers/music_album_controller'
 require_relative '../controllers/genre_controller'
 require_relative '../controllers/book_controller'
 require_relative '../controllers/label_controller'
 
 class Options
   include ItemController
+  include MusicAlbumController
   include GenreController
   include BookController
   include LabelController
 
   def initialize
-    @items = []
+    @items = load_all_items
     @albums = []
-    @genres = []
-    @books = []
-    @labels = []
+    @genres = load_all_genres
   end
 
   def show_menu
@@ -29,9 +30,9 @@ class Options
     puts '5. List Of Games'
     puts '6. List All Authors'
     puts '7. Add A Book'
-    puts '8. Add A Game'
-    puts '9. Add a Music Album'
-    puts '10. Add A Genre'
+    puts '8. Add a Music Album'
+    puts '9. Add A Genre'
+    puts '10. Add A Game'
     puts '11. Quit'
     puts ''
   end
@@ -56,9 +57,9 @@ class Options
       # add book
       add_book
     when '8'
-      # add game
+      create_music_album
     when '9'
-      # add
+      create_genre
     when '10'
       # add
     end

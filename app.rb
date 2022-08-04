@@ -19,6 +19,8 @@ class App
       option = gets.chomp
       exit if option == '11'
       @options.menu_options(option)
+      @options.save_items
+      @options.save_genre
     end
     puts 'Bye'
   end
