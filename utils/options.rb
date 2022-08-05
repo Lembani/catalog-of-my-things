@@ -6,6 +6,7 @@ require_relative '../controllers/music_album_controller'
 require_relative '../controllers/genre_controller'
 require_relative '../controllers/book_controller'
 require_relative '../controllers/label_controller'
+require_relative '../controllers/author_controller'
 
 class Options
   include ItemController
@@ -13,6 +14,7 @@ class Options
   include GenreController
   include BookController
   include LabelController
+  include AuthorController
 
   def initialize
     @items = load_all_items
@@ -20,6 +22,7 @@ class Options
     @genres = load_all_genres
     @labels = acces_label
     @books = []
+    @authors = load_all_authors
   end
 
   def show_menu
@@ -35,36 +38,24 @@ class Options
     puts '8. Add a Music Album'
     puts '9. Add A Genre'
     puts '10. Add A Game'
-    puts '11. Quit'
+    puts '11. Add An Author'
+    puts '12. Quit'
     puts ''
   end
 
   def menu_options(option)
     case option
-    when '1'
-      # method to list books
-      list_book
-    when '2'
-      list_label
-      # list labels
-    when '3'
-      all_music_albums
-    when '4'
-      all_genres
-    when '5'
-      add_label
-      # list games
-    when '6'
-      # list authors
-    when '7'
-      # add book
-      add_book
-    when '8'
-      create_music_album
-    when '9'
-      create_genre
-    when '10'
-      # add
+    when '1' then list_book
+    when '2' then list_label
+    when '3' then all_music_albums
+    when '4' then all_genres
+    when '5' then add_label
+    when '6' then all_authors
+    when '7' then add_book
+    when '8' then create_music_album
+    when '9' then create_genre
+    when '10' # add game
+    when '11' then create_author
     end
   end
 end
