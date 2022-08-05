@@ -25,4 +25,15 @@ module AuthorController
     puts 'No Authors to show' if @authors.empty?
   end
 
+  def create_author
+    print 'Enter author first name: '
+    first_name = gets.chomp.strip
+    print 'Enter author last name: '
+    last_name = gets.chomp.strip
+    @authors << Author.new(first_name, last_name)
+    puts ''
+    puts 'Author added successfully!'
+    puts ''
+  end
+
 end
