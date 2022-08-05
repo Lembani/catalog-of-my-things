@@ -7,6 +7,7 @@ require_relative '../controllers/genre_controller'
 require_relative '../controllers/book_controller'
 require_relative '../controllers/label_controller'
 require_relative '../controllers/author_controller'
+require_relative '../controllers/game_controller'
 
 class Options
   include ItemController
@@ -15,6 +16,7 @@ class Options
   include BookController
   include LabelController
   include AuthorController
+  include GameController
 
   def initialize
     @items = load_all_items
@@ -39,25 +41,41 @@ class Options
     puts '9. Add A Genre'
     puts '10. Add A Game'
     puts '11. Add An Author'
-    puts '12. Quit'
+    puts '12. Add Label'
+    puts '13. Quit'
     puts ''
   end
 
+  # rubocop:disable Metrics/MethodLength
   def menu_options(option)
     case option
-    when '1' then list_book
-    when '2' then list_label
-    when '3' then all_music_albums
-    when '4' then all_genres
-    when '5' then add_label
-    when '6' then all_authors
-    when '7' then add_book
-    when '8' then create_music_album
-    when '9' then create_genre
-    when '10' # add game
-    when '11' then create_author
+    when '1'
+      list_book
+    when '2'
+      list_label
+    when '3'
+      all_music_albums
+    when '4'
+      all_genres
+    when '5'
+      list_game
+    when '6'
+      load_all_authors
+    when '7'
+      add_book
+    when '8'
+      create_music_album
+    when '9'
+      create_genre
+    when '10'
+      add_game
+    when '11'
+      create_author
+    when '12'
+      add_label
     end
   end
+  # rubocop:enable Metrics/MethodLength
 end
 
 # rubocop:enable Metrics/CyclomaticComplexity

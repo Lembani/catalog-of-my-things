@@ -3,8 +3,6 @@ require './utils/options'
 class App
   def initialize
     @options = Options.new
-    # @books = []
-    # @labels = []
   end
 
   def run
@@ -23,7 +21,7 @@ class App
       @options.save_genre
       @options.save_label
       @options.save_author
+      puts 'Bye'
     end
-    puts 'Bye'
   end
 end

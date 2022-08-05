@@ -55,3 +55,12 @@ CREATE TABLE label(
   items CHAR(50) [],
   CONSTRAINT fk_label FOREIGN KEY(label_id) REFERENCES items(id)
 )
+
+-- Game TABLE 
+
+CREATE TABLE game(
+  game_id SERIAL PRIMARY KEY,
+  multiplayer VARCHAR(50),
+  last_played_at DATE,
+  CONSTRAINT FOREIGN KEY(game_id) REFERENCES items(id)
+)
