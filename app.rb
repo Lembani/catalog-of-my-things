@@ -15,13 +15,13 @@ class App
       @options.show_menu
       print 'Option: '
       option = gets.chomp
-      exit if option == '12'
+      exit if option == '13'
       @options.menu_options(option)
       @options.save_items
       @options.save_genre
       @options.save_label
       @options.save_author
-      puts 'Bye'
     end
+    puts 'Bye'
   end
 end
