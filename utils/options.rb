@@ -37,11 +37,12 @@ class Options
     puts '8. Add a Music Album'
     puts '9. Add A Genre'
     puts '10. Add A Game'
-    puts '11. Add Label' 
+    puts '11. Add Label'
     puts '12. Quit'
     puts ''
   end
 
+  # rubocop:disable Metrics/MethodLength
   def menu_options(option)
     case option
     when '1'
@@ -68,6 +69,7 @@ class Options
       add_label
     end
   end
+  # rubocop:enable Metrics/MethodLength
 end
 
 # rubocop:enable Metrics/CyclomaticComplexity

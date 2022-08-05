@@ -34,7 +34,7 @@ module ItemController
                          cover_state: item.cover_state, className: 'Book' }
       when Game
         items_store << { multiplayer: item.multiplayer, publish_date: item.publish_date,
-                         last_played_at: item.last_played_at, className: 'Game'}
+                         last_played_at: item.last_played_at, className: 'Game' }
       end
     end
     File.write('./data/items.json', items_store.to_json)
