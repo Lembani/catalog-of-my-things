@@ -3,8 +3,8 @@ require './utils/options'
 class App
   def initialize
     @options = Options.new
-    @books = []
-    @labels = []
+    # @books = []
+    # @labels = []
   end
 
   def run
@@ -21,6 +21,7 @@ class App
       @options.menu_options(option)
       @options.save_items
       @options.save_genre
+      @options.save_label
     end
     puts 'Bye'
   end

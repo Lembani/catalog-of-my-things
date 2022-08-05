@@ -18,6 +18,7 @@ class Options
     @items = load_all_items
     @albums = []
     @genres = load_all_genres
+    @labels = acces_label
   end
 
   def show_menu
@@ -50,8 +51,10 @@ class Options
     when '4'
       all_genres
     when '5'
+      add_label
       # list games
     when '6'
+      list_label
       # list authors
     when '7'
       # add book
