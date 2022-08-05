@@ -36,3 +36,22 @@ CREATE TABLE author (
   last_name TEXT,
   items INT [],
 );
+
+-- Book TABLE
+
+CREATE TABLE books (
+  book_id SERIAL PRIMARY KEY,
+  publish_date DATE,
+  cover_state VARCHAR(10)
+  CONSTRAINT FOREIGN KEY(book_id) REFERENCES items(id)
+)
+
+-- LABEL TABLE 
+
+CREATE TABLE label(
+  label_id SERIAL PRIMARY KEY,
+  title VARCHAR(100),
+  color VARCHAR(50),
+  items CHAR(50) [],
+  CONSTRAINT fk_label FOREIGN KEY(label_id) REFERENCES items(id)
+)
