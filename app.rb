@@ -17,12 +17,12 @@ class App
       @options.show_menu
       print 'Option: '
       option = gets.chomp
-      exit if option == '11'
+      exit if option == '12'
       @options.menu_options(option)
       @options.save_items
       @options.save_genre
       @options.save_label
+      puts 'Bye'
     end
-    puts 'Bye'
   end
 end

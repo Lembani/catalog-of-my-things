@@ -10,5 +10,6 @@ module BookController
     cover_state = gets.chomp
     book = Book.new(publisher, publish_date, cover_state)
     @items << book
+    puts 'Book created successfully!'
   end
 end

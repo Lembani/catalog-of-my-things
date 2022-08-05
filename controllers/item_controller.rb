@@ -12,6 +12,7 @@ module ItemController
         when 'MusicAlbum'
           items_store << MusicAlbum.new(item['name'], item['publish_date'], item['on_spotify'])
         when 'Game'
+          items_store << Game.new(item['multiplayer'], item['publish_date'], item['last_played_at'])
           # Store Game in Store
         end
       end
@@ -31,6 +32,9 @@ module ItemController
       when Book
         items_store << { publisher: item.publisher, publish_date: item.publish_date,
                          cover_state: item.cover_state, className: 'Book' }
+      when Game
+        items_store << { multiplayer: item.multiplayer, publish_date: item.publish_date,
+                         last_played_at: item.last_played_at, className: 'Game'}
       end
     end
     File.write('./data/items.json', items_store.to_json)
@@ -55,6 +59,15 @@ module ItemController
               Publish Date: #{item.publish_date} Cover State: #{item.cover_state}"
       elsif item.is_a?(Book).nil?
         puts 'There is no book yet'
+      end
+    end
+  end
+
+  def list_game
+    @items.each do |item|
+      if item.is_a?(Game)
+        puts "#{[item.class]} Multiplayer: #{item.multiplayer}
+        Publish Date: #{item.publish_date} Last played at: #{item.last_played_at}"
       end
     end
   end
