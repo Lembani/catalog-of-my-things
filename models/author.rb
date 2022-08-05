@@ -1,5 +1,5 @@
 class Author
-  attr_accessor :first_name, :last_name, :items
+  attr_accessor :first_name, :last_name, :item
   attr_reader :id
 
   def initialize(first_name, last_name)
@@ -10,7 +10,7 @@ class Author
   end
 
   def add_item(item)
-    item.author(self)
+    item.author = self
     @items << item unless @items.include?(item)
   end
 end
