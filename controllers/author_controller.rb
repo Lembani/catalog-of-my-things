@@ -15,4 +15,14 @@ module AuthorController
     author_store
   end
 
+  def all_authors
+    puts ''
+    puts 'All Authors'
+    puts ''
+    @authors.each do |author|
+      puts "ID: #{author.id} First name: #{author.first_name} - Last name #{author.last_name}"
+    end
+    puts 'No Authors to show' if @authors.empty?
+  end
+
 end
