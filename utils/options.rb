@@ -60,7 +60,7 @@ class Options
     when '5'
       list_game
     when '6'
-      load_all_authors
+      all_authors
     when '7'
       add_book
     when '8'
