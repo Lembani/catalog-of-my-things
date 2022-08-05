@@ -11,6 +11,7 @@ CREATE TABLE items (
   archived BOOLEAN,
   CONSTRAINT fk_music_album FOREIGN KEY(album_id) REFERENCES music_album(id),
   CONSTRAINT fk_genre FOREIGN KEY(genre_id) REFERENCES genre(id),
+  CONSTRAINT fk_author FOREIGN KEY(author_id) REFERENCES author(id),
 );
 
 CREATE TABLE music_album (
@@ -27,6 +28,13 @@ CREATE TABLE genre (
   id SERIAL PRIMARY KEY,
   name TEXT,
   items TEXT [],
+);
+
+CREATE TABLE author (
+  id SERIAL PRIMARY KEY,
+  first_name TEXT,
+  last_name TEXT,
+  items INT [],
 );
 
 -- Book TABLE

@@ -7,7 +7,7 @@ module GenreController
     if File.exist?(genre_file) && File.read(genre_file) != ''
       genre_data = genre_file.read
       JSON.parse(genre_data).each do |genre|
-        genre_store << Genre.new(genre)
+        genre_store << Genre.new(genre['name'])
       end
     else
       File.write(genre_file, '[]')
