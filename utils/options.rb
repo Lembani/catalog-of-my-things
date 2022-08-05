@@ -4,16 +4,22 @@ require 'json'
 require_relative '../controllers/item_controller'
 require_relative '../controllers/music_album_controller'
 require_relative '../controllers/genre_controller'
+require_relative '../controllers/book_controller'
+require_relative '../controllers/label_controller'
 
 class Options
   include ItemController
   include MusicAlbumController
   include GenreController
+  include BookController
+  include LabelController
 
   def initialize
     @items = load_all_items
     @albums = []
     @genres = load_all_genres
+    @labels = acces_label
+    @books = []
   end
 
   def show_menu
@@ -37,18 +43,22 @@ class Options
     case option
     when '1'
       # method to list books
+      list_book
     when '2'
+      list_label
       # list labels
     when '3'
       all_music_albums
     when '4'
       all_genres
     when '5'
+      add_label
       # list games
     when '6'
       # list authors
     when '7'
       # add book
+      add_book
     when '8'
       create_music_album
     when '9'
