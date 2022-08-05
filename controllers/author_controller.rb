@@ -36,4 +36,11 @@ module AuthorController
     puts ''
   end
 
+  def save_author
+    author_store = []
+    @authors.each do |author|
+      author_store << { first_name: author.first_name, last_name: author.last_name }
+    end
+    File.write('./data/author.json', author_store.to_json)
+  end
 end
