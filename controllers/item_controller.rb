@@ -30,7 +30,7 @@ module ItemController
                          on_spotify: item.on_spotify, className: 'MusicAlbum' }
       when Book
         items_store << { publisher: item.publisher, publish_date: item.publish_date,
-                        cover_state: item.cover_state, className: 'Book' }
+                         cover_state: item.cover_state, className: 'Book' }
       end
     end
     File.write('./data/items.json', items_store.to_json)
@@ -51,8 +51,9 @@ module ItemController
   def list_book
     @items.each do |item|
       if item.is_a?(Book)
-        puts "#{[item.class]} Publisher: #{item.publisher} Publish Date: #{item.publish_date} Cover State: #{item.cover_state}"
-      elsif (item.is_a?(Book)) == nil
+        puts "#{[item.class]} Publisher: #{item.publisher}
+              Publish Date: #{item.publish_date} Cover State: #{item.cover_state}"
+      elsif item.is_a?(Book).nil?
         puts 'There is no book yet'
       end
     end

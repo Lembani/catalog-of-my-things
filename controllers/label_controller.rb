@@ -23,7 +23,7 @@ module LabelController
     label_file = open('./data/label.json')
     if File.exist?(label_file) && File.read(label_file) != ''
       data = label_file.read
-      JSON.parse(data).each { |label| labels_store.push(Label.new(label["title"], label["color"])) }
+      JSON.parse(data).each { |label| labels_store.push(Label.new(label['title'], label['color'])) }
     else
       File.write(label_file, '[]')
     end

@@ -1,15 +1,6 @@
-
 require './models/book'
 
 module BookController
-  # def list_book
-  #   if @books.empty?
-  #     puts 'There is no book yet'
-  #   else
-  #     @books.each { |book| puts "#{[book.class]} Publisher: #{book.publisher} Publish Date: #{book.publish_date} Cover State: #{book.cover_state}" }
-  #   end
-  # end
-
   def add_book
     print 'Publisher: '
     publisher = gets.chomp
