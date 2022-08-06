@@ -4,6 +4,15 @@
 
 > A simple console app that allows users to manage collections of the things they own: books, music albums, movies, and games.  The data is stored in JSON files but there is also a database with the structure of tables analogical to the program's class structure.
 
+### Application Preview
+
+<img width="650" alt="Screenshot 2022-08-05 at 11 10 32 PM" src="https://user-images.githubusercontent.com/30483991/183193347-bd5c9420-5755-4d01-957e-baf6a8682228.png">
+
+
+### UML class diagram
+
+![catalog_of_my_things](https://user-images.githubusercontent.com/30483991/183192928-926e4b73-9098-4645-9c76-270b3797aef9.png)
+
 
 ## Built With
 
